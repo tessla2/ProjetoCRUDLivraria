@@ -1,0 +1,256 @@
+/* Estilos para a página de painel */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container-painel {
+  background-color: #9A1C35;
+  border-radius: 100px 10px 0 0; /* Aplica arredondamento apenas nas bordas superiores */
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2; /* Garante que o cabeçalho esteja acima de outros elementos */
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 28px;
+  color: #FCF8F9;
+  transition: color 0.3s ease;
+}
+
+.company-name img {
+  width: 80px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.company-name:hover {
+  color: #9A1C35;
+}
+
+/* Ícones */
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.welcome-message {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #D7D2D2;
+  transition: color 0.3s ease;
+}
+
+.welcome-message img {
+  width: 70px;
+  margin-left: 10px;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+    /* Seus estilos para os links fora do dropdown aqui */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.menu > li > a:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+        
+  color: #FCF8F9; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #606060; /* Fundo branco */
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:  #9A1C35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*-------------------------------------------------------------tabela--------------------------------------*/
+.avatar {
+  width: 50px; /* largura desejada */
+  height: 50px; /* altura desejada */
+  border-radius: 50%; /* para tornar a imagem redonda, se desejado */
+  object-fit: cover; /* ajusta a imagem para cobrir a área do contêiner */
+  margin-left:50px;
+}
+
+.sidebar {
+  flex: 1; /* Remova essa linha para que a barra lateral não ocupe espaço horizontalmente */
+  background-color: #ffffff;
+  border-radius: 0px;
+  position: fixed;      
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 150px; /* Defina a largura vertical da barra lateral */
+  height: calc(100vh - 140px); /* Aumente a altura da barra lateral */
+  top: 100px; /* Mantenha o mesmo recuo do topo */
+  left: 0; /* Mova totalmente para a esquerda */
+  overflow-y: auto; /* Adicione uma barra de rolagem vertical se o conteúdo exceder a altura */
+}
+
+
+.slogan-img2 {
+  position: absolute; /* Defina a posição absoluta para a imagem */
+  top: 0; /* Ajuste a posição vertical */
+  left: 0; /* Ajuste a posição horizontal */
+  width: 100%; /* Defina a largura para ocupar 100% da largura da barra lateral */
+  height: calc(100% - 50px); /* Ajuste conforme a altura do rodapé */
+  object-fit: cover; /* Estica a imagem para cobrir todo o espaço disponível */
+  z-index: -1; /* Coloque a imagem atrás dos itens da lista */
+}
+
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: #620013;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Tabela */
+/* Adicione os estilos CSS necessários aqui */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 300px);
+  max-width: calc(100% - 300px);
+  margin-top: 140px;
+  margin-left: 300px;
+  margin-bottom: 50px; /* Ajuste o margin-bottom conforme necessário */
+  padding-bottom: 50px; /* Igual à altura do rodapé */
+  box-sizing: border-box;
+}
+
+
+
+.livros-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.livro {
+    display: inline-block;
+    width: calc(20% - 20px); /* Ajuste para ocupar 25% do espaço com margens */
+    margin: 0 5px 20px 5px; /* Reduzindo as margens */
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.livro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.livro img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.livro h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.livro p {
+    margin: 0;
+    color: #666;
+}
+
+.livro .preco {
+    font-weight: bold;
+    color: #009900;
+}
+
+.livro .autor {
+    font-style: italic;
+}
+.livros-tabela .livro {
+  padding: 20px; /* Adicione espaçamento interno */
+  border: 1px solid #ccc; /* Adicione uma borda */
+  background-color: #FCFCFC; /* Cor de fundo */
+  border-radius: 8px; /* Adicione bordas arredondadas */
+  transition: all 0.3s ease; /* Adicione transição para efeitos de hover */
+}
+
+.livros-tabela .livro:hover {
+  transform: translateY(-5px); /* Efeito de levantamento no hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra no hover */
+}

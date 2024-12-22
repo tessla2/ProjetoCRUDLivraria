@@ -1,0 +1,185 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 90px; /* Adicionando espaço acima do conteúdo */
+}
+/* Container Painel */
+.container-painel {
+  background-color: #9A1C35;
+  border-radius: 100px 10px 0 0;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: calc(100% - 20px); /* Ajuste a largura conforme necessário */
+  position: fixed;
+  top: 0;
+  right: -10px; /* Ajuste a posição para a direita conforme necessário */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  height: 100px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Adicionado */
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #FCF8F9;
+}
+
+.company-name img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.company-name:hover {
+  color: #9A1C35;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.menu > li > a:hover {
+  background-color: #eee;
+  border-color: #999;
+}
+
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+  color: #FCF8F9; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #606060;
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:  #9A1C35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para a tabela */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 50px; /* Adicionando margem superior para mover a tabela para baixo */
+}
+
+.user-table {
+  max-width: 90%; /* Definindo uma largura máxima */
+  margin: 0 auto; /* Centralizando a tabela */
+  border-collapse: collapse;
+  border: 2px solid #9A1C35;
+}
+
+.user-table th,
+.user-table td {
+  padding: 15px; /* Aumentando o espaço interno */
+  border: 1px solid #9A1C35;
+  text-align: left; /* Alinhando o texto à esquerda */
+}
+
+.user-table th {
+  background-color: #9A1C35;
+  color: #fff;
+}
+
+/* Estilo alternado para linhas */
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para links */
+.action-cell a {
+  padding: 8px 12px;
+  background-color: #9A1C35;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.action-cell a:hover {
+  background-color: #620013;
+}
+
+/* Estilo para a imagem do livro */
+.user-table img {
+  max-width: 80px;
+  max-height: 80px;
+}
+.user-table th,
+.user-table td {
+  padding: 7px; /* Reduza o valor do padding conforme necessário */
+}
+
+/* Ajustando o tamanho dos campos */
+.user-table .titulo-column {
+  width: 30%; /* 25% da largura da tabela */
+}
+
+.user-table .QuantidadeemEstoque-column {
+  width: 0%; /* Reduzindo a largura para 3% */
+}
+
+.user-table .preco-column {
+  width: 0%; /* Reduzindo a largura para 15% */
+}
+.user-table .ano-column {
+  width: 0%; /* Reduzindo a largura para 15% */
+}
+.user-table .IMG-column {
+  width: 10%; /* Reduzindo a largura para 15% */
+}
+/* Movendo a coluna de estoque para a última posição */
+@media screen and (max-width: 768px) {
+  .user-table .stock-column {
+    display: block;
+    width: 100%;
+  }
+
+  .user-table thead .stock-column,
+  .user-table tbody .stock-column {
+    display: none;
+  }
+}

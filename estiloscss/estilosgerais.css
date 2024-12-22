@@ -1,0 +1,328 @@
+/*
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F1EEEE;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar {
+  position: fixed;
+  z-index: 999; /* Para garantir que fique acima de outros elementos */
+  padding: 30px; /* Adicione o preenchimento conforme necessário */
+ /* width: 100%; /* Ocupar toda a largura * /
+  background-color: #620013;
+  padding: 10px;
+  width: calc(100% - 200px); /* Largura do top bar, menos a largura do menu * /
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Adicionamos um novo estilo para a div do menu * /
+.top-bar-menu {
+  display: flex; /* Permite que os itens do menu sejam posicionados horizontalmente * /
+}
+
+
+.welcome-message {
+  display: flex;
+  justify-content: flex-end; /* Alinha os itens à direita * /
+  align-items: center; /* Centraliza verticalmente os itens * /
+  font-size: 17px;
+  margin-bottom: 5px; /* Espaçamento entre mensagens * /
+  margin-right: 30px;
+  color: white;
+  text-align: right;
+}
+
+.welcome-message img {
+  margin-right: 10px; /* Ajuste o espaço conforme necessário * /
+  max-width: 50px; /* Defina o tamanho máximo da imagem * /
+}
+.company-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  align-self: flex-start; /* Coloca o elemento no topo * /
+  margin-top: -50px; /* Remover qualquer margem superior que possa estar causando o problema * /
+  font-family: 'Quicksand', sans-serif; /* Alterar a fonte para algo mais curvo * /
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adicionar uma sombra de texto para suavizar * /
+}
+
+
+.company-name img {
+  margin-right: 5px; /* Ajuste o espaço conforme necessário * /
+  max-width: 60px; /* Defina o tamanho máximo da imagem * /
+  vertical-align: middle; /* Alinhe verticalmente com o texto * /
+}
+
+
+
+/*-----------------------------------------------container------------------------------------------------------------* /
+
+.container-painel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* Adiciona margem automática para centralizar * /
+  text-align: left;     
+}
+/*-----------------------------------------------headers------------------------------------------------------------* /
+.header {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header-logo {
+  color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*-----------------------------------------------input------------------------------------------------------------* /
+/*
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%; /* tamanho do input de text e password e submit* /
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #FF0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #C32318;
+}
+
+/*input[type="text"] {
+    width: 300px; /* largura * /
+    height: 30px; /* altura * /
+    padding: 5px; 
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff; 
+    background-color: #FFFFFF;  
+}*/
+
+
+/*------------------------------------------------footer------------------------------------------------------------* /
+.footer-content {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: -1vh; /*move para parte inferior* /
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+/*------------------------------------------------link container------------------------------------------------------------* /
+/* Estilos para o menu * /
+.menu {
+  background-color: #620013;
+  padding: 10px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Alinha os itens do menu horizontalmente * /
+}
+
+.menu ul li {
+  margin: 0 10px; /* Adiciona espaço entre os itens * /
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+}
+
+.menu ul li a:hover {
+  background-color: #8C001A;
+}
+
+/* Estilo para o dropdown * /
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #620013;
+  border-radius: 5px;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.link-container a {
+  text-decoration: none;
+  color: #fff; /* Altere a cor do texto conforme necessário * /
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave * /
+}
+
+.link-container a:hover {
+  background-color: #f2f2f2; /* Altere a cor de fundo ao passar o mouse conforme necessário * /
+}
+
+.label {
+  font-weight: bold;
+  width: 100px;
+}
+
+h3 {
+  text-align: center;
+  position: fixed;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #555;
+}
+/*--------------------------------------------table-------------------------------------------------------------------------------* /
+/* Estilos para a tabela * /
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  border: 2px solid #ccc; /* Adiciona uma borda à tabela * /
+}
+
+/* Estilos para as células da tabela * /
+.user-table td, .user-table th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Estilos para o cabeçalho da tabela * /
+.user-table th {
+  background-color: #094967;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilos para linhas pares da tabela * /
+.user-table tr:nth-child(even) {
+  background-color: #ecf0f1;
+}
+
+/* Estilos para as células de ação * /
+.user-table .action-cell {
+  padding: 8px;
+}
+
+/* Estilos para a imagem * /
+.user-table img {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+/* Estilos para os atributos * /
+.user-table .attribute {
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
+
+/* Estilos para os valores * /
+.user-table .value {
+  color: #34495e;
+}
+
+/* Estilos para linhas verticais * /
+.user-table th + th,
+.user-table td + td {
+  border-left: 1px solid #ccc;
+}
+
+/* Wrapper da tabela * /
+.table-wrapper {
+  width: 95%;
+  overflow-x: auto;
+  margin: 20px auto; /* Ajusta as margens * /
+}
+
+
+/*--------------------------------------------select-------------------------------------------------------------------* /
+select {
+  width: 100%; /* Defina a largura conforme necessário * /
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff; /* Cor de fundo * /
+  color: #555; /* Cor do texto * /
+}
+
+select::placeholder {
+  color: #999; /* Cor do texto de placeholder * /
+}
+
+/* Estilo para a seta do select * /
+select::-ms-expand {
+  display: none; /* Oculta a seta no Internet Explorer * /
+}
+*/

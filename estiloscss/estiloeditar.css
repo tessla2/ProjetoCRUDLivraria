@@ -1,0 +1,194 @@
+/* Container Painel */
+.container-painel {
+  background-color: #9A1C35;
+  border-radius: 100px 10px 0 0;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: calc(100% - 20px); /* Ajuste a largura conforme necessário */
+  position: fixed;
+  top: 0;
+  right: -10px; /* Ajuste a posição para a direita conforme necessário */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  height: 1000px;        
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Adicionado */
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #FCF8F9;
+}
+
+.company-name img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.company-name:hover {
+  color: #9A1C35;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+    /* Seus estilos para os links fora do dropdown aqui */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.menu > li > a:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+        
+  color: #FCF8F9; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #606060; /* Fundo branco */
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:  #9A1C35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/*-------------------------------------------Formulário-----------------------------------------------*/
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-container h4 {
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #9A1C35;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #620013;
+}
+
+.link-container {
+  margin-top: 20px;
+}
+
+.link-container a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #9A1C35;
+  margin-bottom: 10px;
+}
+
+.link-container a:last-child {
+  margin-bottom: 0;
+}
+
+.link-container a:hover {
+  color: #620013;
+}
+
+/*----------------------------------------alerta-----------------------------------------------------------*/
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: relative; /* Adicionando posição relativa */
+    z-index: 3; /* Definindo um z-index maior */
+}
+
+.alert-close {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+.alert-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}

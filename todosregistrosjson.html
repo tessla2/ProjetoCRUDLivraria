@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Todos Registros em JSON</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">     
+    <link rel="stylesheet" href="estiloscss/estilojson.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container-painel">
+        <div class="top-bar">
+            <div class="company-name">
+                <img src="imagens/book.png" alt="Slogan" class="slogan-img">
+                Consulta
+            </div>
+            <div class="menu-horizontal">
+                <ul class="menu">
+                    <li class="dropdown">
+                        <a href="#" >Consultar</a>
+                        <div class="dropdown-content">
+                            <a href="consultartodos.php">Todos os Livros</a>
+                            <a href="consultartitulo.php">Por Título</a>
+                            <a href="consultarautor.php">Por Autor</a>
+                            <a href="consultargenero.php">Por Gênero</a>
+                            <a href="consultareditora.php">Por Editora</a>
+                            <a href="consultarano.php">Por Ano de Publicação</a>
+                            <a href="consultarisbn.php">Por ISBN</a>
+                            <a href="consultarqtdestoque.php">Por Quantidade em Estoque</a>
+                            <a href="consultarpreco.php">Por Preço</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Consultar Personalizada</a>
+                        <div class="dropdown-content">
+                            <a href="umregistroxml.html">Por Registro XML</a>
+                            <a href="todosregistrosjson.html">Por todos Registros JSON</a>
+                        </div>
+                    </li>
+                    <li><a href="gestao.php">Voltar a Gestão</a></li>      
+                    <li><a href="logout.php">Terminar Sessão</a></li>
+                </ul>
+            </div> 
+        </div>  
+        
+        <div id="resultadoJSON">
+            <!-- Os dados JSON serão exibidos aqui -->
+        </div>
+        
+  
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Faz a requisição ao webservice para listar todos os registros em JSON
+            $.ajax({
+                url: 'http://bloomtess.atwebpages.com/5421/ficha6/webservice.php/?acao=listarTodosLivrosJSON',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // Processa os dados JSON recebidos e os exibe na página
+                    var resultado = '<h2>Todos Registros em JSON:</h2>';
+                    $.each(data, function(index, livro) {
+                        resultado += '<p><strong>ID:</strong> ' + livro.id + '</p>';
+                        resultado += '<p><strong>Título:</strong> ' + livro.titulo + '</p>';
+                        resultado += '<p><strong>Autor:</strong> ' + livro.autor + '</p>';
+                        resultado += '<p><strong>Gênero:</strong> ' + livro.genero + '</p>';
+                        resultado += '<p><strong>Editora:</strong> ' + livro.editora + '</p>';
+                        resultado += '<p><strong>Ano de Publicação:</strong> ' + livro.ano_publicacao + '</p>';
+                        resultado += '<p><strong>ISBN:</strong> ' + livro.isbn + '</p>';
+                        resultado += '<p><strong>Preço:</strong> ' + livro.preco + '</p>';
+                        resultado += '<p><strong>Quantidade em Estoque:</strong> ' + livro.qtdestoque + '</p>';
+                        resultado += '<p><strong>Imagem:</strong></p> <img src="' + livro.imagem + '" style="max-width: 200px; max-height: 200px;"></p>';
+
+                    });
+                    $('#resultadoJSON').html(resultado);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

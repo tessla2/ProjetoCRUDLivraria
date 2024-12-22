@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Society</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">     
+    <link rel="stylesheet" href="estiloscss/estiloxml.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <div class="container-painel">
+        <div class="top-bar">
+            <div class="company-name">
+                <img src="imagens/book.png" alt="Slogan" class="slogan-img">
+                Consulta
+            </div>
+            <div class="menu-horizontal">
+                <ul class="menu">
+                    <li class="dropdown">
+                        <a href="#" >Consultar</a>
+                        <div class="dropdown-content">
+                            <a href="consultartodos.php">Todos os Livros</a>
+                            <a href="consultartitulo.php">Por Título</a>
+                            <a href="consultarautor.php">Por Autor</a>
+                            <a href="consultargenero.php">Por Gênero</a>
+                            <a href="consultareditora.php">Por Editora</a>
+                            <a href="consultarano.php">Por Ano de Publicação</a>
+                            <a href="consultarisbn.php">Por ISBN</a>
+                            <a href="consultarqtdestoque.php">Por Quantidade em Estoque</a>
+                            <a href="consultarpreco.php">Por Preço</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Consultar Personalizada</a>
+                        <div class="dropdown-content">
+                            <a href="umregistroxml.html">Por Registro XML</a>
+                            <a href="todosregistrosjson.html">Por todos Registros JSON</a>
+                        </div>
+                    </li>
+                    <li><a href="gestao.php">Voltar a Gestão</a></li>      
+                    <li><a href="logout.php">Terminar Sessão</a></li>
+                </ul>
+            </div> 
+           </div>
+        <div class="form-container">
+            <label for="idRegistro">ID do Registro:</label>
+            <input type="text" id="idRegistro" name="idRegistro">
+            <button id="btnBuscar">Buscar</button>
+        </div>
+
+        <div id="resultadoXML">
+            <!-- Os dados XML serão exibidos aqui -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#btnBuscar').click(function(){
+                var idRegistro = $('#idRegistro').val();
+                if(idRegistro){
+                    // Faz a requisição ao webservice para listar um registro em XML
+                    $.ajax({
+                        url: 'http://bloomtess.atwebpages.com/5421/ficha6/webservice.php/?acao=listarUmLivroXML&id=' + idRegistro,
+                        type: 'GET',
+                        dataType: 'xml',
+                        success: function(data) {
+                            // Processa os dados XML recebidos e os exibe na página
+                            var resultado = '<h2>Registro em XML:</h2>';
+                            $(data).find('livro').each(function() {
+                                var id = $(this).find('id').text();
+                                var titulo = $(this).find('titulo').text();
+                                var autor = $(this).find('autor').text();
+                                var genero = $(this).find('genero').text();
+                                var editora = $(this).find('editora').text();
+                                var ano_publicacao = $(this).find('ano_publicacao').text();
+                                var isbn = $(this).find('isbn').text();
+                                var preco = $(this).find('preco').text();
+                                var qtdestoque = $(this).find('qtdestoque').text();
+                                var imagem = $(this).find('imagem').text();
+                                resultado += '<div class="livro">';
+                                resultado += '<p><strong>ID:</strong> ' + id + '</p>';
+                                resultado += '<p><strong>Título:</strong> ' + titulo + '</p>';
+                                resultado += '<p><strong>Autor:</strong> ' + autor + '</p>';
+                                resultado += '<p><strong>Gênero:</strong> ' + genero + '</p>';
+                                resultado += '<p><strong>Editora:</strong> ' + editora + '</p>';
+                                resultado += '<p><strong>Ano de Publicação:</strong> ' + ano_publicacao + '</p>';
+                                resultado += '<p><strong>ISBN:</strong> ' + isbn + '</p>';
+                                resultado += '<p><strong>Preço:</strong> ' + preco + '</p>';
+                                resultado += '<p><strong>Quantidade em Estoque:</strong> ' + qtdestoque + '</p>';
+                                resultado += '</div>';
+                            });
+                            $('#resultadoXML').html(resultado);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                } else {
+                    alert('Por favor, digite o ID do registro.');
+                }
+            });
+        });
+    </script>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; Developed with ❤️ by <a href="#" class="white-text" target="_blank">Tess</a>.</p>
+  </div>
+</footer>
+
+<style>
+/* Estilos para o rodapé */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Alinha o rodapé à esquerda */
+  width: 100%;
+  background-color: #5D5A5A; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto do rodapé */
+  text-align: center;
+  padding: 20px 0; /* Adiciona espaço interno ao rodapé */
+  z-index: 1000; /* Garante que o rodapé esteja acima de outros elementos */
+  height: 50px; /* Defina a altura desejada */      
+}
+
+.footer a {
+  color: #fff; /* Cor dos links do rodapé */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre os links */
+}
+</style>
+
+</body>
+</html>

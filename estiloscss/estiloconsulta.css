@@ -1,0 +1,225 @@
+/* Container Painel */
+.container-painel {
+  background-color: #9A1C35;
+  border-radius: 100px 10px 0 0;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: calc(100% - 20px); /* Ajuste a largura conforme necessário */
+  position: fixed;
+  top: 0;
+  right: -10px; /* Ajuste a posição para a direita conforme necessário */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  height: 80px;        
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Adicionado */
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #FCF8F9;
+}
+
+.company-name img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.company-name:hover {
+  color: #9A1C35;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+    /* Seus estilos para os links fora do dropdown aqui */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.menu > li > a:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+        
+  color: #FCF8F9; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #606060; /* Fundo branco */
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:  #9A1C35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Estilos para o título */
+.container-painel h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para o formulário */
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;    
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+.form-group input[type="text"] {
+    width: 40%; /* Alterado para 100% para ocupar toda a largura disponível */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-group input[type="number"] {
+    width: 20%; /* Ocupa toda a largura disponível */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    margin-top: 15px; /* Espaçamento superior */
+}
+
+
+.form-group input[type="submit"] {
+    width: auto; /* Alterado para auto para que o botão de envio tenha a largura do conteúdo */
+    padding: 15px;
+    background-color: #9A1C35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;   
+    transition: background-color 0.3s ease;
+}
+
+/* Adicionado para exibir os campos de entrada um abaixo do outro */
+.form-group input[type="text"],
+.form-group input[type="submit"] 
+.form-group input[type="number"]{
+    display: block;
+     margin: 0 auto;    
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #620013;
+}
+
+.pesquisa {
+    max-height: 400px; /* Defina uma altura máxima para o contêiner pai */
+    overflow-y: auto; /* Adicione a barra de rolagem quando necessário */
+}
+
+.pesquisa table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    max-height: 300px; /* Defina uma altura máxima para a tabela */
+}
+
+
+.pesquisa th, .pesquisa td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+}
+
+.pesquisa th {
+    background-color: #9A1C35;
+    color: #fff;
+}
+
+.pesquisa tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para os links de navegação */
+.link-container {
+    margin-top: 20px;
+}
+
+.link-container a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 20px;
+    background-color: #9A1C35;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.link-container a:hover {
+    background-color: #620013;
+}
+
+/* Estilo para links */
+.action-cell a {
+  padding: 8px 12px;
+  background-color: #9A1C35;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.action-cell a:hover {
+  background-color: #620013;
+}

@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+/* Estilos Gerais */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Painel */
+.container-painel {
+  background-color: #9A1C35;
+  border-radius: 100px 10px 0 0;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: calc(100% - 20px); /* Ajuste a largura conforme necessário */
+  top: 0;
+  right: -10px; /* Ajuste a posição para a direita conforme necessário */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  height: 90px;        
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Adicionado */
+}
+
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #FCF8F9;
+}
+
+.company-name img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.company-name:hover {
+  color: #9A1C35;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li > a {
+    /* Seus estilos para os links fora do dropdown aqui */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.menu > li > a:hover {
+    background-color: #eee;
+    border-color: #999;
+}
+.menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.menu li a {
+        
+  color: #FCF8F9; 
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #606060; /* Fundo branco */
+  border-radius: 5px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:  #9A1C35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#resultadoJSON {
+    max-width: 800px;
+    margin: 50px auto 0 auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#resultadoJSON h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#resultadoJSON p {
+    margin-bottom: 10px;
+}
+
+#resultadoJSON img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-container a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #9A1C35;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.link-container a:hover {
+    background-color: #620013;
+}
