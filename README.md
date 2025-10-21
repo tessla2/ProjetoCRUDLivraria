@@ -1,5 +1,5 @@
 # Gestao Livraria
-Esse projeto é uma WebPage de Gestão de livros Android nativo densevolvido com PHP, HTML e CSS. A principal funcionalidade é efetuar CRUD e consultas no banco de dados utilizando todos os parâmetros. 
+Esse projeto é uma WebPage de Gestão de livros nativo densevolvido com PHP, HTML e CSS. A principal funcionalidade é efetuar CRUD e consultas no banco de dados utilizando todos os parâmetros. 
 
 ## :camera_flash: Screenshots
 <img src="https://github.com/user-attachments/assets/34490f62-188e-4309-a5b0-b53cb59bac16" width=700 height=360 />
