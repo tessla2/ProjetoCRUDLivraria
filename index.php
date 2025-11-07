@@ -1,10 +1,10 @@
 <?php
 session_start();
 //DADOS BD
-$maquina="fdb1031.runhosting.com";
-$usernamebd="4433440_tess";
-$passwordbd="fusrodah2011";
-$bd="4433440_tess";
+$maquina="***";
+$usernamebd="***";
+$passwordbd="***";
+$bd="***";
  
 if (isset($_POST["login"])) {
   //print "O Formulário foi enviado !";
