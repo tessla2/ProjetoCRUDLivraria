@@ -12,10 +12,10 @@ if (isset($_SESSION["utilizador"]) && $_SERVER["REQUEST_METHOD"] === "POST" && i
     $imagem_url = $_POST["imagem"]; // novo campo para o URL da imagem
     
     //BD
-    $maquina = "fdb1031.runhosting.com";
-    $usernamebd = "4433440_tess";
-    $passwordbd = "fusrodah2011";
-    $bd = "4433440_tess";
+    $maquina = "***";
+    $usernamebd = "***";
+    $passwordbd = "***";
+    $bd = "***";
 
     $ligacao = new PDO("mysql:host=$maquina; dbname=$bd", $usernamebd, $passwordbd);
     $ligacao->query("SET NAMES utf8");
