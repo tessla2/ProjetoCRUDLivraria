@@ -15,10 +15,10 @@ $utilizador = $_SESSION["utilizador"];
 $id_livro = $_GET['id'];
 
 // Conexão com o banco de dados
-$maquina = "fdb1031.runhosting.com";
-$usernamebd = "4433440_tess";
-$passwordbd = "fusrodah2011";
-$bd = "4433440_tess";
+$maquina = "***";
+$usernamebd = "***";
+$passwordbd = "***";
+$bd = "***";
 $ligacao = new PDO("mysql:host=$maquina; dbname=$bd", $usernamebd, $passwordbd);
 $ligacao->query("SET NAMES utf8");
 
